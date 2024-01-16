@@ -12,7 +12,7 @@ const Register: React.FC = () => {
   const initialValues: IUser = {
     username: "",
     email: "",
-    password: "",
+    pwd: "",
   };
 
   const validationSchema = Yup.object().shape({
@@ -29,7 +29,7 @@ const Register: React.FC = () => {
     email: Yup.string()
       .email("This is not a valid email.")
       .required("This field is required!"),
-    password: Yup.string()
+    pwd: Yup.string()
       .test(
         "len",
         "The password must be between 6 and 40 characters.",
@@ -42,9 +42,9 @@ const Register: React.FC = () => {
   });
 
   const handleRegister = (formValue: IUser) => {
-    const { username, email, password } = formValue;
+    const { username, email, pwd } = formValue;
 
-    register(username, email, password).then(
+    register(username, email, pwd).then(
       (response) => {
         setMessage(response.data.message);
         setSuccessful(true);
@@ -100,14 +100,14 @@ const Register: React.FC = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="password"> Password </label>
+                  <label htmlFor="pwd"> Password </label>
                   <Field
-                    name="password"
-                    type="password"
+                    name="pwd"
+                    type="pwd"
                     className="form-control"
                   />
                   <ErrorMessage
-                    name="password"
+                    name="pwd"
                     component="div"
                     className="alert alert-danger"
                   />
