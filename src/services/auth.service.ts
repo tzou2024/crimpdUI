@@ -27,17 +27,25 @@ export const login = (username: string, pwd: string) => {
     });
 };
 export const logout = () => {
-  // axios
-  // .post(API_URL + "logout/access", {}, {headers: authHeader()}
-  // )
-  // .then((response) => {
-  //   console.log(response)
-  // }).catch(err => {
-  //   console.log(err);
-  // })
-  // localStorage.removeItem("user")
+  axios
+  .post(API_URL + "logout/access", {}, {headers: authHeader()}
+  )
+  .then((response) => {
+    // localStorage.setItem("sus", String(response))
+    console.log(response)
+    return
+  }).catch(err => {
+    // localStorage.setItem("unsus", err)
+    console.log(err)
+    return
+
+  }).then(() => {
+    //at least remove the token the front end either way
+    localStorage.removeItem("user")
+    return
+  });
   // return
-  localStorage.removeItem("user")
+  // localStorage.removeItem("user")
 };
 
 export const getCurrentUser = () => {
