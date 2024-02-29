@@ -1,3 +1,23 @@
+# crimpdUI 💐
+
+A User interface for logging and tracking climbing progression, inside and outdoors.
+
+# Purpose
+
+This UI is meant to be used as part of a scalable automated web service for logging climbings.
+
+Its purpose is to hold information on all crags, climbs, reps, sets, climbers, and so much more.
+
+It will mainly interact with a back-end
+[front end](https://github.com/tzou2024/crimpdAPI), which logs climber stats and climbs in progress.
+
+# Deployment
+
+This app is still under development.
+
+***
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
